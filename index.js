@@ -27,28 +27,36 @@ inquirer
         },
     ])
     .then((data) => {
-        const shape =data.shape;
-        if(shape =="Triangle") {
-            const triangle = new Triangle(data.letters, data.textColor, data.shapeColor);
-            console.log(triangle)
-            fs.writeFile("examples/triangle.svg", triangle.render(), (err) => {
-                err ? console.log(err) : console.log("Success!");
-        });
-    } else if (shape == "Square") {
-        const square = new Square(data.letters, data.textColor, data.shapeColor);
-        console.log(square)
-        fs.writeFile("examples/square.svg", square.render(), (err) => {
-            err ? console.log(err) : console.log("Success!");
-        });
-    });
-     else if (shape == "Circle") {
-        const circle = new Circle(data.letters, data.textColor, data.shapeColor);
-        console.log(circle)
-        fs.writeFile("examples/circle.svg", circle.render(), (err) => {
-            err ? console.log(err) : console.log("Success!");
-        });
-    }
-);
-};
+        const shape = data.shapes;
+        if (shape == "Triangle") {
+          const triangle = new Triangle(
+            data.fillColor,
+            data.letters,
+            data.textColor
+          );
+          console.log(triangle);
+          // const svg = triangle.render();
+          // console.log(svg);
+          fs.writeFile("examples/triangle.svg", triangle.render(), (err) => {
+            err ? console.log(err) : console.log("success");
+          });
+        } else if (shape == "Square") {
+          const square = new Square(data.fillColor, data.letters, data.textColor);
+          console.log(square);
+          // const svg = square.render();
+          // console.log(svg);
+          fs.writeFile("examples/Square.svg", square.render(), (err) => {
+            err ? console.log(err) : console.log("success");
+          });
+        } else {
+          const circle = new Circle(data.fillColor, data.letters, data.textColor);
+          console.log(circle);
+          // const svg = circle.render();
+          // console.log(svg);
+          fs.writeFile("examples/Circle.svg", circle.render(), (err) => {
+            err ? console.log(err) : console.log("success");
+          });
+        }
+      });
 
 init();
