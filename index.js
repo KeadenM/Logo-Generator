@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const jest = require('jest');
 const fs = require('fs');
-const {Shape, Triangle, Square, Circle} = require('.lib/shape');
+const {Shape, Triangle, Square, Circle} = require('lib/shape.js');
 inquirer
     .prompt([
         {
@@ -35,24 +35,18 @@ inquirer
             data.textColor
           );
           console.log(triangle);
-          // const svg = triangle.render();
-          // console.log(svg);
           fs.writeFile("examples/triangle.svg", triangle.render(), (err) => {
             err ? console.log(err) : console.log("success");
           });
         } else if (shape == "Square") {
           const square = new Square(data.fillColor, data.letters, data.textColor);
           console.log(square);
-          // const svg = square.render();
-          // console.log(svg);
           fs.writeFile("examples/Square.svg", square.render(), (err) => {
             err ? console.log(err) : console.log("success");
           });
         } else {
           const circle = new Circle(data.fillColor, data.letters, data.textColor);
           console.log(circle);
-          // const svg = circle.render();
-          // console.log(svg);
           fs.writeFile("examples/Circle.svg", circle.render(), (err) => {
             err ? console.log(err) : console.log("success");
           });
