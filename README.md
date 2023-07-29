@@ -31,3 +31,6 @@ If you have any questions my github is: KeadenM. You can also reach me via email
 
 ## License
 MIT https://opensource.org/licenses/MIT
+
+## Video tutorial
+https://drive.google.com/file/d/1TfDLoyx1ohO7_dbEstA7xigRv5r6lTTk/view
