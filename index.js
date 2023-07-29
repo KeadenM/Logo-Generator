@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const jest = require('jest');
+const textest = require('jest');
 const fs = require('fs');
-const {Shape, Triangle, Square, Circle} = require('lib/shape.js');
+const {Shape, Triangle, Square, Circle} = require('./lib/shape.js');
 inquirer
     .prompt([
         {
@@ -22,12 +22,12 @@ inquirer
         },
         {
             type: "input",
-            name: "shapeColor",
+            name: "fillColor",
             message: "What color would you like the shape to be?",
         },
     ])
     .then((data) => {
-        const shape = data.shapes;
+        const shape = data.shape;
         if (shape == "Triangle") {
           const triangle = new Triangle(
             data.fillColor,
@@ -44,7 +44,7 @@ inquirer
           fs.writeFile("examples/Square.svg", square.render(), (err) => {
             err ? console.log(err) : console.log("success");
           });
-        } else {
+        } else if (shape == "Circle") {
           const circle = new Circle(data.fillColor, data.letters, data.textColor);
           console.log(circle);
           fs.writeFile("examples/Circle.svg", circle.render(), (err) => {
@@ -53,4 +53,4 @@ inquirer
         }
       });
 
-init();
+// init();

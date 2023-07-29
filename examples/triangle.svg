@@ -1,0 +1,6 @@
+<svg width="300" height="300">
+        <g>
+          <polygon points="80,0 0,200 250,370" fill="Orange" />
+          <text x="35" y="170" fill="Purple" font-size="100">SVG</text>
+        </g>
+      </svg>

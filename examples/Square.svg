@@ -1,0 +1,6 @@
+<svg width="300" height="200">
+        <g>
+         <rect x="0" y="0" width="200" height="200" fill="White"/>
+         <text x="5" y="130" font-size="100" fill="Red">Red</text>
+        </g>
+      </svg>
